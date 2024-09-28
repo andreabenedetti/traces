@@ -8,7 +8,7 @@ let positions = [];
 let height;
 
 function preload() {
-  data = loadJSON('assets/data.json');
+  data = loadJSON('assets/data-240918.json');
   console.log(data);
 }
 
@@ -29,25 +29,24 @@ function setup() {
 }
 
 function draw() {
-  background(254, 10);
+  background(254, 5);
   noStroke();
   h = windowHeight / data.data.length;
 
   let currentTime = millis();
 
   //text("Current Time (ms): " + currentTime, 10, 20);
-  data.data.forEach((d, i) => {
+  data.data.forEach((d) => {
     let y = positions.find(pos => pos.item === d.identifier);
 
     if((currentTime >= d.intervalBeginMs && currentTime <= d.intervalEndMs)) {
-      c = categoryColor(d.category);
-      fill(c);
+      fill(categoryColor(d.category));
       textAlign(CENTER);
-      text(d.identifier + " - " +  d.category, windowWidth / 2, y.y + 5 + height / 2);
-      
+      textFont("Helvetica");
+      filter(BLUR, 2);
+      text(d.identifier, windowWidth / 2, y.y + 5 + height / 2);
     }
   })
-  filter(BLUR, 1);
 }
 
 function categoryColor(category) {

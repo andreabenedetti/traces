@@ -43,7 +43,7 @@ function draw() {
       fill(categoryColor(d.category));
       textAlign(CENTER);
       textFont("Helvetica");
-      filter(BLUR, 2);
+      filter(BLUR, 0.5);
       text(d.identifier, windowWidth / 2, y.y + 5 + height / 2);
     }
   })

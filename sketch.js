@@ -41,7 +41,7 @@ let animation = function(a) {
       if((currentTime >= d.intervalBeginMs && currentTime <= d.intervalEndMs)) {
         a.fill(categoryColor(d.category));
         a.textAlign(a.RIGHT);
-        a.textSize(15);
+        a.textSize(14);
         a.textStyle("bold");
         a.textFont("Helvetica");
         a.text(d.category, a.windowWidth - 10, y.y + 5 + height / 2);
@@ -84,7 +84,7 @@ let grid = function(g) {
       console.log(d);
       let y = positions.find(pos => pos.item === d.identifier);
       g.push();
-      g.textSize(15);
+      g.textSize(14);
       g.fill(220);
       g.textFont("Helvetica");
       g.text(d.item, 10, d.y + 5 + height / 2);

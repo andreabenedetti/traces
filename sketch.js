@@ -14,6 +14,7 @@ function preload() {
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
+  background(250);
   parentList = parents(data.data, "parent");
 
   height = windowHeight / parentList.length;
@@ -29,11 +30,12 @@ function setup() {
 }
 
 function draw() {
-  background(254, 5);
+  background(250, 1);
   noStroke();
   h = windowHeight / data.data.length;
 
   let currentTime = millis();
+  filter(BLUR, 0.5);
 
   //text("Current Time (ms): " + currentTime, 10, 20);
   data.data.forEach((d) => {
@@ -42,20 +44,25 @@ function draw() {
     if((currentTime >= d.intervalBeginMs && currentTime <= d.intervalEndMs)) {
       fill(categoryColor(d.category));
       textAlign(CENTER);
+      textSize(13);
+      textStyle("bold");
       textFont("Helvetica");
-      filter(BLUR, 0.5);
       text(d.identifier, windowWidth / 2, y.y + 5 + height / 2);
     }
   })
 }
 
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+};
+
 function categoryColor(category) {
-  let palette = ["#fe98a1",
-    "#139d1b",
-    "#ec1660",
-    "#02b9cb",
-    "#bc7200",
-    "#86aeff"]
+  let palette = ["#FFAC81",
+    "#0088f8",
+    "#FEC3A6",
+    "#EFE9AE",
+    "#CDEAC0",
+    "#4D9DE0"];
 
   switch (category) {
     case "location":

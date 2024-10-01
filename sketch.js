@@ -10,6 +10,7 @@ let animation = function(a) {
   }
   
   a.setup = function() {
+    let startbutton = a.select("#start");
     a.createCanvas(a.windowWidth, a.windowHeight);
     a.background(250);
     parentList = parents(data.data, "parent");
@@ -21,6 +22,13 @@ let animation = function(a) {
         item: p,
         y: i * height
       });
+    });
+
+    a.noLoop();
+
+    startbutton.mousePressed(event => {
+      a.select(".pop-up").style("opacity: 0")
+      a.loop();
     });
     
     a.frameRate(60);
@@ -51,6 +59,10 @@ let animation = function(a) {
 
   a.windowResized = function() {
     a.resizeCanvas(a.windowWidth, a.windowHeight);
+  }
+
+  a.mousePressed = function() {
+    a.loop
   }
 }
 

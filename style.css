@@ -1,9 +1,52 @@
 html, body {
   margin: 0;
   padding: 0;
+  font-family: "Helvetica", sans-serif;
+  font-size: 15px;
+  line-height: 1.2;
+  color: #444444;
 }
 
 canvas {
   display: block;
   position: absolute;
 }
+
+.pop-up {
+  /* background: #FFFFFF; */
+  border-radius: 10px;
+  position: absolute;
+  width: 70vw;
+  height: auto;
+  z-index: 9999;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 2rem;
+  backdrop-filter: blur(2px);
+  border: 1px solid rgba(0,0,0,.1);
+  box-shadow: 0 0px 20px rgba(0,0,0,.1);
+  transition: all 0.3s ease-in-out;
+}
+
+button {
+  box-shadow: 0 0px 5px 5px #F6946E;
+  outline: none;
+  border: none;
+  padding: 0.6rem 0.8rem;
+  background: #F6946E;
+  color: #FFF;
+  border-radius: 2rem;
+  text-align: center;
+  font-weight: bold;
+  width: 100%;
+}
+
+@media (max-width: 991.98px) { 
+  .pop-up {
+    width: 80vw;
+    height: 85vh;
+    overflow-y: scroll;
+  }
+ }
+

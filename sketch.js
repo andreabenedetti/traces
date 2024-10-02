@@ -100,7 +100,7 @@ let grid = function(g) {
       g.fill(220);
       g.textFont("Helvetica");
       g.text(d.item, 10, d.y + 5 + height / 2);
-      g.stroke(220);
+      g.stroke(240);
       g.line(10, d.y, g.windowWidth - 10, d.y);
       g.pop();
     })
@@ -119,12 +119,14 @@ function windowResized() {
 };
 
 function categoryColor(category) {
-  let palette = ["#6350C6",
-    "#39AF9D",
-    "#F6946E",
-    "#BCD148",
-    "#D87FB0",
-    "#64A0D7"];
+  // let palette = ["#6350C6",
+  //   "#39AF9D",
+  //   "#F6946E",
+  //   "#BCD148",
+  //   "#D87FB0",
+  //   "#64A0D7"];
+
+  let palette = ["#304F4F", "#463669", "#693038", "#695430", "#566935", "#333333"]
     
     switch (category) {
       case "location":

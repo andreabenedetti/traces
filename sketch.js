@@ -35,7 +35,7 @@ let animation = function(a) {
   }
   
   a.draw = function() {
-    a.background(250, 1);
+    a.background(250, 2);
     a.noStroke();
     h = a.windowHeight / data.data.length;
     
